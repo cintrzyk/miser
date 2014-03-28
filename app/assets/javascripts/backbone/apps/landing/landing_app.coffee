@@ -3,7 +3,7 @@
   API =
     show: ->
       new LandingApp.Show.Controller
+        region: App.mainRegion
 
-  App.commands.setHandler 'user:notauthenticated', ->
-    App.navigate App.rootRoute
+  App.commands.setHandler 'show:landing', ->
     API.show()

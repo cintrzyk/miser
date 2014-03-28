@@ -2,3 +2,8 @@
 
   class Show.Layout extends App.Views.Layout
     template: 'landing/show/templates/layout'
+    regions:
+      signupRegion : '.signup-region'
+
+  class Show.Signup extends App.Views.ItemView
+    template: 'landing/show/templates/signup'

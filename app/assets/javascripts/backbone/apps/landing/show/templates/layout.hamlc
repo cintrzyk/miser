@@ -1,1 +1,5 @@
-Hello stranger!
+.row
+  .col-md-6
+    Hello stranger!
+  .col-md-6
+    .signup-region
