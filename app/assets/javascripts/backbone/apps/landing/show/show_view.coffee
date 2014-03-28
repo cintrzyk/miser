@@ -7,3 +7,10 @@
 
   class Show.Signup extends App.Views.ItemView
     template: 'landing/show/templates/signup'
+    events:
+      'submit form' : 'onSubmit'
+
+    onSubmit: (e) ->
+      e.preventDefault()
+      { email, password } = Backbone.Syphon.serialize @
+      App.signup email, password
