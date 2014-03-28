@@ -4,6 +4,7 @@
 #= require js_stack/plugins/underscore.string
 #= require backbone.syphon
 #= require ./backbone/app
+#= require ./backbone/main_router
 
 #= require_tree ./backbone/lib/utilities
 #= require_tree ./backbone/lib/views
