@@ -1,5 +1,4 @@
-%form.navbar-form.navbar-right{ role: 'search' }
-  .form-group
-    %input.form-control{ name: 'email', placeholder: 'email', type: 'text' }
-    %input.form-control{ name: 'password', placeholder: 'password', type: 'password' }
-  %button.btn.btn-primary{ type: 'submit' } Log in
+.form-group
+  %input.form-control{ name: 'email', placeholder: 'Email', type: 'text' }
+  %input.form-control{ name: 'password', placeholder: 'Password', type: 'password' }
+%button.btn.btn-primary{ type: 'submit' } Log in

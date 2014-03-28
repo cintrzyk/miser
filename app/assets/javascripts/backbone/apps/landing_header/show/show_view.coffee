@@ -7,9 +7,11 @@
 
   class Show.SigninForm extends App.Views.ItemView
     template: 'landing_header/show/templates/signinform'
-    tagName: 'signin-form'
+    tagName: 'form'
+    className: 'navbar-form navbar-right'
+
     events:
-      'submit form' : 'onSubmit'
+      'submit' : 'onSubmit'
 
     onSubmit: (e) ->
       e.preventDefault()

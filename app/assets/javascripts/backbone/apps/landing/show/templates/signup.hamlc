@@ -1,3 +1,18 @@
 .panel.panel-default
   .panel-body
-    Signup today!
+    %form.form-horizontal{ autocomplete: 'off' }
+      %fieldset
+        %legend
+          Sign Up
+          %small.pull-right it's free!
+        .form-group
+          %label.col-lg-2.control-label{ for: 'inputEmail' } Email
+          .col-lg-10
+            %input#inputEmail.form-control{ placeholder: 'Your Email', type: 'text' }
+        .form-group
+          %label.col-lg-2.control-label{ for: 'inputPassword' } Password
+          .col-lg-10
+            %input#inputPassword.form-control{ placeholder: 'New Password', type: 'password' }
+        .form-group
+          .col-lg-10.col-lg-offset-2
+            %button.btn.btn-success{ type: 'submit' } Sign Up
