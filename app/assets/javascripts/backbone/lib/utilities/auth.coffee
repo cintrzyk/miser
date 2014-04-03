@@ -2,16 +2,13 @@
 
   _.extend App,
 
-    signup: (email, password) ->
-      console.log 'sign up request'
-
     signin: (email, password) ->
       Messenger().run
         errorMessage: 'Please check your credentials.'
         successMessage: 'Signin successfully!'
         progressMessage: 'Trying to sing in. Please wait...'
       ,
-        url: App.domainRoute(Routes.signin_path())
+        url: App.selfRoute(Routes.signin_path())
         type: 'post'
         data:
           email: email

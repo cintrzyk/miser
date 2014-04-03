@@ -12,7 +12,7 @@
     startHistory: ->
       Backbone.history.start()
 
-    domainRoute: (route) ->
+    selfRoute: (route) ->
       domain = App.request 'get:domain'
       "http://#{domain}#{route}"
 
