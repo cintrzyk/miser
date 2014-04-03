@@ -6,6 +6,7 @@ do (Backbone) ->
     _.defaults options,
       beforeSend: _.bind(methods.beforeSend,  entity)
       complete:   _.bind(methods.complete,    entity)
+      url: "http://miserapi.dev#{@urlRoot()}"
 
     sync = _sync(method, entity, options)
     if !entity._fetch and method is 'read'
