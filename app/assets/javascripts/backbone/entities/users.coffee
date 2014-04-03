@@ -1,6 +1,10 @@
 @Miser.module 'Entities', (Entities, App, Backbone, Marionette, $, _) ->
 
-  class Entities.User extends Backbone.Model
+  class Entities.UserSignUp extends Entities.Model
+    urlRoot: ->
+      Routes.api_signup_path()
+
+  class Entities.User extends Entities.Model
     urlRoot: ->
       Routes.users_path()
 
@@ -19,8 +23,14 @@
       user.fetch options
       user
 
+    getUserSignUp: ->
+      new Entities.UserSignUp
+
   App.reqres.setHandler 'users:entities', ->
     API.getUsers()
 
   App.reqres.setHandler 'user:entities', (user_id, options) ->
     API.getUser user_id, options
+
+  App.reqres.setHandler 'user:signup:entities', ->
+    API.getUserSignUp()
