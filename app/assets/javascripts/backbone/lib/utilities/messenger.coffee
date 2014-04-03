@@ -6,10 +6,6 @@
     parentLocations: ['#main-region']
   }
 
-  Messenger().hookBackboneAjax
-    errorMessage: 'Error syncing with the server'
-    retry: false
-
   _.extend App,
 
     msg: (text, options = {}) ->
@@ -23,4 +19,4 @@
         message: text
         type: type
         showCloseButton: showCloseButton
-        hideAfter: 6
+        hideAfter: 7
