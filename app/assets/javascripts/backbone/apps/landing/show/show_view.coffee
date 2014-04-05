@@ -7,10 +7,11 @@
 
   class Show.Signup extends App.Views.ItemView
     template: 'landing/show/templates/signup'
-    events:
-      'submit form' : 'onSubmit'
+    className: 'panel panel-default'
 
-    onSubmit: (e) ->
-      e.preventDefault()
-      { email, password } = Backbone.Syphon.serialize @
-      App.signup email, password
+    form:
+      className: 'form-horizontal'
+      focusFirstInput: true
+
+  class Show.SignupConfirm extends App.Views.ItemView
+    template: 'landing/show/templates/confirm'
