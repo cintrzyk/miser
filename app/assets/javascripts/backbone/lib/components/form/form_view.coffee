@@ -28,6 +28,9 @@
       _.defer =>
         @focusFirstInput() if @config.focusFirstInput
 
+    onBeforeClose: ->
+      @syncStop @model
+
     focusFirstInput: ->
       @$(':text:visible:enabled:first').focus()
 
