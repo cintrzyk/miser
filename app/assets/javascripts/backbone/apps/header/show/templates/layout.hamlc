@@ -11,7 +11,7 @@
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
           %a.dropdown-toggle{ 'data-toggle' => 'dropdown', href: '#' }
-            = @currentUser.name
+            = @currentUser.name or 'Me'
             %b.caret
           %ul.dropdown-menu
             %li

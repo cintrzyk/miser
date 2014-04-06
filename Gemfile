@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.1'
 
 gem 'rails', '4.1.0.rc2'
+gem 'unicorn'
 
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.0.0'
@@ -18,14 +19,11 @@ gem 'font-awesome-rails'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv', '~> 2.0'
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
 end
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
