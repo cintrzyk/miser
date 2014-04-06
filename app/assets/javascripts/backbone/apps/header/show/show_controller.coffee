@@ -5,7 +5,7 @@
       layout = @getLayoutView()
 
       @listenTo layout, 'user:signout', ->
-        App.signout()
+        window.location = '/signout'
 
       @show layout
 

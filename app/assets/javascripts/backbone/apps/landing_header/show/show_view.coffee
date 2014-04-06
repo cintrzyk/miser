@@ -7,13 +7,6 @@
 
   class Show.SigninForm extends App.Views.ItemView
     template: 'landing_header/show/templates/signinform'
-    tagName: 'form'
-    className: 'navbar-form navbar-right'
 
-    events:
-      'submit' : 'onSubmit'
-
-    onSubmit: (e) ->
-      e.preventDefault()
-      { email, password } = Backbone.Syphon.serialize @
-      App.signin email, password
+    form:
+      className: 'navbar-form navbar-right'
