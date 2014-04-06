@@ -37,3 +37,26 @@
     saveError: (model, xhr, options) =>
       # set errors directly on the model unless status returned was 500 or 404
       @set _errors: $.parseJSON(xhr.responseText)?.errors unless /500|404/.test xhr.status
+
+    sync: (method, entity, options = {}) ->
+      _sync = Backbone.sync
+
+      methods =
+        beforeSend: ->
+          @trigger 'sync:start', @
+        complete: ->
+          @trigger 'sync:stop', @
+        buildURL: ->
+          urlRoot = @urlRoot()
+          return urlRoot if _.string.startsWith urlRoot, 'http://'
+          api_endpoint = App.request 'get:api_endpoint'
+          "http://#{api_endpoint}#{urlRoot}"
+
+      _.defaults options,
+        beforeSend: _.bind(methods.beforeSend, entity)
+        complete:   _.bind(methods.complete,   entity)
+        url:        _.bind(methods.buildURL,   entity)()
+
+      sync = _sync(method, entity, options)
+      if !entity._fetch and method is 'read'
+        entity._fetch = sync

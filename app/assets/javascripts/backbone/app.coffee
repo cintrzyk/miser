@@ -8,12 +8,6 @@
     App.api_endpoint = api_endpoint
     App.domain = domain
 
-    $.ajaxSetup
-      beforeSend: ->
-        return if _.string.startsWith @url, 'http://'
-        @url = _.insert @url, 0, '/' unless _.string.startsWith @url, '/'
-        @url = "http://#{api_endpoint}#{@url}"
-
     if signed_user_data?
       App.execute 'set:current_user', signed_user_data
 

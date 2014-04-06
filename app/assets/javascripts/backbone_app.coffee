@@ -1,7 +1,7 @@
 #= require js_stack
+#= require js_stack/plugins/underscore.string
 #= require hamlcoffee
 
-#= require js_stack/plugins/underscore.string
 #= require backbone.syphon
 #= require_tree ./config
 #= require ./backbone/app
