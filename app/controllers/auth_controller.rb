@@ -17,6 +17,16 @@ class AuthController < ApplicationController
     redirect_to root_path
   end
 
+  def confirmation
+    response = Auth.confirm params[:token]
+    if response.success?
+      session[:signed_user_data] = user(response)
+      redirect_to root_path
+    else
+      not_found
+    end
+  end
+
   private
 
   def user(response)
