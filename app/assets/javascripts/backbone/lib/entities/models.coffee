@@ -35,8 +35,11 @@
       callback?()
 
     saveError: (model, xhr, options) =>
-      # set errors directly on the model unless status returned was 500 or 404
-      @set _errors: $.parseJSON(xhr.responseText)?.errors unless /500|404/.test xhr.status
+      json_response = $.parseJSON(xhr.responseText)
+      if msg = json_response?.msg
+        App.msg msg.text,
+          type: msg.type
+      @set _errors: json_response?.errors unless /500|404/.test xhr.status
 
     sync: (method, entity, options = {}) ->
       _sync = Backbone.sync

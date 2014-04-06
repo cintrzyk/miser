@@ -10,7 +10,7 @@ do ($) ->
     _.defaults obj,
       className: ''
       backgroundColor: methods.setBackgroundColor @css('backgroundColor')
-      zIndex: if @css('zIndex') is 'auto' or 0 then 1000 else (Number) @css('zIndex')
+      zIndex: if @css('zIndex') is 'auto' or 0 then 2000 else (Number) @css('zIndex')
 
     $offset = @offset()
     $width  = @outerWidth false
