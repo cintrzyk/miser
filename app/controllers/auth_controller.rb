@@ -6,7 +6,9 @@ class AuthController < ApplicationController
     if response.success?
       render json: session[:signed_user_data] = user(response), status: :created
     else
-      render json: {}, status: :unauthorized
+      render json: {
+        msg: { text: 'Wrong email or password. Please check your credentials.', type: 'error' }
+      }, status: :unauthorized
     end
   end
 
