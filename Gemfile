@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.1.1'
 
 gem 'rails', '4.1.0.rc2'
-gem 'unicorn'
 
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.0.0'
@@ -26,4 +25,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
+end
+
+group :production do
+  gem 'unicorn'
 end
