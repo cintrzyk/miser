@@ -19,9 +19,10 @@
   App.rootRoute = '#'
 
   App.addRegions
-    headerRegion: '#header-region'
-    mainRegion:   '#main-region'
-    footerRegion: '#footer-region'
+    headerRegion:  '#header-region'
+    sidebarRegion: '#sidebar-region'
+    mainRegion:    '#main-region'
+    footerRegion:  '#footer-region'
 
   App.reqres.setHandler 'default:region', ->
     App.mainRegion
@@ -42,7 +43,11 @@
     App.unregister instance, id if App.environment is 'development'
 
   App.addInitializer ->
-    header = if App.request('get:current_user') then 'HeaderApp' else 'LandingHeaderApp'
+    if App.request 'get:current_user'
+      header = 'HeaderApp'
+      App.module('SidebarApp').start()
+    else
+      header = 'LandingHeaderApp'
     App.module(header).start()
     App.module('FooterApp').start()
 

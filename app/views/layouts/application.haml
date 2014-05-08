@@ -8,5 +8,9 @@
     = include_gon init: true
   %body
     #header-region
-    #main-region.container
-      = yield
+    .row
+      .col-md-4
+        #sidebar-region
+      .col-md-8
+        #main-region
+          = yield
