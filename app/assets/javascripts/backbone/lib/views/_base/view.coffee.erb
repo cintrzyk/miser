@@ -1,0 +1,26 @@
+@Miser.module 'Views', (Views, App, Backbone, Marionette, $, _) ->
+
+  _.extend Marionette.View::,
+
+    addOpacityWrapper: (init = true) ->
+      @$el.toggleWrapper
+        className: 'opacity'
+      , init
+
+    templateHelpers: ->
+      current_user:
+        App.request('get:current_user')?.toJSON()
+
+      assets: (source) ->
+        @__url source
+
+      __assets: ->
+        <% ApplicationHelper.images.each do |img| %>
+          "<%= img %>" : "<%= image_url(img) %>",
+        <% end %>
+
+      __url: (path) ->
+        if @__assets()[path]
+          @__assets()[path]
+        else
+          path
