@@ -45,7 +45,7 @@ h1, .h1, h2, .h2, h3, .h3 {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  box-shadow: 0 1px 2px #272727;
+  box-shadow: 0 1px 2px #272727 !important;
   z-index: 2000;
 }
 .body-expanded .navbar {
