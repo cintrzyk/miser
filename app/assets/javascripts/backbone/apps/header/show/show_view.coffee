@@ -4,3 +4,4 @@
     template: 'header/show/layout'
     triggers:
       'click [data-signout]' : 'user:signout'
+      'click .show-sidebar'  : 'menu:button:clicked'

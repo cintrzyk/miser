@@ -8,3 +8,6 @@
 
   @onStart = ->
     API.show()
+
+  App.commands.setHandler 'toggle:sidebar', ->
+    $('#main').toggleClass 'sidebar-show'

@@ -1,0 +1,5 @@
+%ul.nav.main-menu
+  %li
+    %a.active{ href: "ajax/dashboard.html" }
+      %i.fa.fa-dashboard
+      %span.hidden-xs Dashboard

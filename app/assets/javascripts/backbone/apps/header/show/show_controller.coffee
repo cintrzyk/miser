@@ -7,6 +7,9 @@
       @listenTo layout, 'user:signout', ->
         window.location = '/signout'
 
+      @listenTo layout, 'menu:button:clicked', ->
+        App.execute 'toggle:sidebar'
+
       @show layout
 
     getLayoutView: ->
