@@ -7,10 +7,13 @@
     = csrf_meta_tags
     = include_gon init: true
   %body
-    #header-region
-    .row
-      .col-md-4
-        #sidebar-region
-      .col-md-8
-        #main-region
-          = yield
+    %header#header-region.navbar
+    #main.container-fluid
+      .row
+        #sidebar-region.col-xs-2.col-sm-2
+        #main-content.col-xs-12.col-sm-10
+          .row
+            #breadcrumb.col-xs-12
+              %ol.breadcrumb
+                %li= link_to 'Home', '#'
+          #main-region
