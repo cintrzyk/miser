@@ -1,13 +1,13 @@
-@import "messenger/messenger";
-@import "messenger/messenger-spinner";
-@import "messenger/messenger-theme-air";
-@import "font-awesome";
 @import "compass";
+@import "font-awesome";
 @import "bootswatch";
-@import "partials/variables";
-@import "partials/mixins";
-@import "modules/spinner";
+
+@import "settings/variables";
+
+@import "modules/messenger";
 @import "modules/opacity";
+@import "modules/spinner";
+
 @import "apps/landing_header";
 
 body {

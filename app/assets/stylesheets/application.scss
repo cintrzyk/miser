@@ -1,14 +1,14 @@
-@import "messenger/messenger";
-@import "messenger/messenger-spinner";
-@import "messenger/messenger-theme-air";
-@import "font-awesome";
 @import "compass";
+@import "font-awesome";
 @import "bootswatch";
-@import "partials/all";
-@import "modules/**/*";
+@import "devoops";
+
+@import "settings/variables";
+
+@import "utilities/mixins";
+
+@import "modules/messenger";
+@import "modules/opacity";
+@import "modules/spinner";
+
 @import "apps/header";
-
-// Third-party
-// ...
-
-@import "views/main";
