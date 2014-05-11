@@ -17,6 +17,10 @@ gem 'compass-rails'
 gem 'font-awesome-rails'
 gem 'uglifier', '>= 1.3.0'
 
+group :test, :development do
+  gem 'jasmine-rails'
+end
+
 group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
