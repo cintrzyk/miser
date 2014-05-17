@@ -6,7 +6,7 @@
   API =
     checkSignedStatus: ->
       if App.request 'get:current_user'
-        console.log 'signed in!'
+        App.execute 'show:dashboard'
       else
         App.execute 'show:landing'
 
