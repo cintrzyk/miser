@@ -1,33 +1,32 @@
 .container-fluid.expanded-panel
   .row
     #logo.col-xs-12.col-sm-2
-      %a{href: "index.html"} Miser
+      %a{ href: '#' } Miser
     #top-panel.col-xs-12.col-sm-10
       .row
         .col-xs-8.col-sm-4
-          %a.show-sidebar{href: "#"}
+          %a.show-sidebar{ href: '#' }
             %i.fa.fa-bars
         .col-xs-4.col-sm-8.top-panel-right
           %ul.nav.navbar-nav.pull-right.panel-menu
             %li.hidden-xs
-              %a.modal-link{href: "index.html"}
+              %a.modal-link{ href: '#' }
                 %i.fa.fa-bell
                 %span.badge 7
             %li.hidden-xs
-              %a.ajax-link{href: "ajax/calendar.html"}
+              %a.ajax-link{ href: '#' }
                 %i.fa.fa-calendar
                 %span.badge 7
             %li.hidden-xs
-              %a.ajax-link{href: "ajax/page_messages.html"}
+              %a.ajax-link{ href: '#' }
                 %i.fa.fa-envelope
                 %span.badge 7
             %li.dropdown
-              %a.dropdown-toggle.account{"data-toggle" => "dropdown", href: "#"}
+              %a.dropdown-toggle.account{ 'data-toggle' => 'dropdown', href: '#' }
                 .avatar
-                  %img.img-rounded{alt: "avatar", src: @assets('devoops/avatar.jpg')}
+                  %img.img-rounded{ alt: 'avatar', src: @assets('devoops/avatar.jpg') }
                 %i.fa.fa-angle-down.pull-right
                 .user-mini.pull-right
-                  %span.welcome Welcome,
                   %span= @current_user.name or 'Me'
               %ul.dropdown-menu
                 %li

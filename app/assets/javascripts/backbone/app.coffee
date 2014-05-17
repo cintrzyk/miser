@@ -49,7 +49,6 @@
     else
       header = 'LandingHeaderApp'
     App.module(header).start()
-    App.module('FooterApp').start()
 
   App.on 'initialize:after', (options) ->
     @startHistory()
