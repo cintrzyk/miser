@@ -6,7 +6,6 @@
 
   API =
     show: ->
-      App.execute 'show:sidebar'
       new DashboardApp.Show.Controller
 
   App.addInitializer ->
