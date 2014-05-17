@@ -7,8 +7,8 @@
         region: App.sidebarRegion
         activeLink: activeLink
 
+  @onStart = ->
+    API.show()
+
   App.commands.setHandler 'toggle:sidebar', ->
     $('#main').toggleClass 'sidebar-show'
-
-  App.commands.setHandler 'show:sidebar', (activeLink = '') ->
-    API.show activeLink

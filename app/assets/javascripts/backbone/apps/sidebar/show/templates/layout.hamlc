@@ -1,8 +1,13 @@
 %li
-  %a{ href: '#' }
+  %a{ href: '#dashboard' }
     %i.fa.fa-dashboard
     %span.hidden-xs Dashboard
-%li
-  %a{ href: '#surveys' }
+%li.dropdown
+  %a.dropdown-toggle{ href: '#' }
     %i.fa.fa-pencil-square-o
     %span.hidden-xs Surveys
+  %ul.dropdown-menu
+    %li
+      %a{ href: '#surveys/new' } Create
+    %li
+      %a{ href: '#surveys' } List
