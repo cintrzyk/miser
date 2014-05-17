@@ -1,5 +1,8 @@
-%ul.nav.main-menu
-  %li
-    %a.active{ href: "ajax/dashboard.html" }
-      %i.fa.fa-dashboard
-      %span.hidden-xs Dashboard
+%li
+  %a{ href: '#' }
+    %i.fa.fa-dashboard
+    %span.hidden-xs Dashboard
+%li
+  %a{ href: '#surveys' }
+    %i.fa.fa-pencil-square-o
+    %span.hidden-xs Surveys

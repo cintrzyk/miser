@@ -2,9 +2,11 @@
 
   class Show.Controller extends App.Controllers.Authenticated
 
-    initialize: ->
-      layout = @getLayoutView()
+    initialize: (opt) ->
+      { activeLink } = opt
+      layout = @getLayoutView activeLink
       @show layout
 
-    getLayoutView: ->
+    getLayoutView: (activeLink) ->
       new Show.Layout
+        activeLink: activeLink

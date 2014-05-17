@@ -2,12 +2,13 @@
   @startWithParent = false
 
   API =
-    show: ->
+    show: (activeLink) ->
       new SidebarApp.Show.Controller
         region: App.sidebarRegion
-
-  @onStart = ->
-    API.show()
+        activeLink: activeLink
 
   App.commands.setHandler 'toggle:sidebar', ->
     $('#main').toggleClass 'sidebar-show'
+
+  App.commands.setHandler 'show:sidebar', (activeLink = '') ->
+    API.show activeLink
