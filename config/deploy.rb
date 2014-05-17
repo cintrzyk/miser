@@ -4,7 +4,7 @@ set :application, 'miser'
 set :repo_url, 'git@github.com:cintrzyk/miser.git'
 
 set :rbenv_custom_path, '/usr/local/rbenv'
-set :rbenv_ruby, '2.1.1'
+set :rbenv_ruby, '2.1.2'
 
 set :pty, true
 set :sudo_prompt, ""
