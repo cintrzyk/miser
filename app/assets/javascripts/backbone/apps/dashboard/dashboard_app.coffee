@@ -1,8 +1,8 @@
 @Miser.module 'DashboardApp', (DashboardApp, App, Backbone, Marionette, $, _) ->
 
   class DashboardApp.Router extends Marionette.AppRouter
-    # appRoutes:
-      # '' : 'show'
+    appRoutes:
+      'dashboard' : 'show'
 
   API =
     show: ->
@@ -14,4 +14,5 @@
       controller: API
 
   App.commands.setHandler 'show:dashboard', ->
+    App.navigate 'dashboard'
     API.show()
