@@ -2,12 +2,12 @@
 
   class SurveysApp.Router extends Marionette.AppRouter
     appRoutes:
-      'surveys'     : 'show'
+      'surveys'     : 'list'
       'surveys/new' : 'new'
 
   API =
-    show: ->
-      new SurveysApp.Show.Controller
+    list: ->
+      new SurveysApp.List.Controller
 
     new: ->
       new SurveysApp.New.Controller
@@ -15,3 +15,8 @@
   App.addInitializer ->
     new SurveysApp.Router
       controller: API
+
+  App.vent.on 'survey:created', (survey) ->
+    App.navigate 'surveys'
+    App.execute 'reload:sidebar'
+    API.list()
