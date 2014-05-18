@@ -1,4 +1,19 @@
 @Miser.module 'Entities', (Entities, App, Backbone, Marionette, $, _) ->
+  default_sync_options = (options, entity) ->
+    beforeSend = ->
+      @trigger 'sync:start', @
+    complete = ->
+      @trigger 'sync:stop', @
+    buildURL = ->
+      url = @url()
+      return url if _.string.startsWith url, 'http://'
+      api_endpoint = App.request 'get:api_endpoint'
+      "http://#{api_endpoint}#{url}"
+
+    _.defaults options,
+      beforeSend: _.bind(beforeSend, entity)
+      complete:   _.bind(complete,   entity)
+      url:        _.bind(buildURL,   entity)()
 
   class Entities.Model extends Backbone.Model
     destroy: (options = {}) ->
@@ -42,22 +57,14 @@
       @set _errors: json_response?.errors unless /500|404/.test xhr.status
 
     sync: (method, entity, options = {}) ->
-      methods =
-        beforeSend: ->
-          @trigger 'sync:start', @
-        complete: ->
-          @trigger 'sync:stop', @
-        buildURL: ->
-          url = @url()
-          return url if _.string.startsWith url, 'http://'
-          api_endpoint = App.request 'get:api_endpoint'
-          "http://#{api_endpoint}#{url}"
+      default_sync_options options, entity
+      sync = super(method, entity, options)
+      if !entity._fetch and method is 'read'
+        entity._fetch = sync
 
-      _.defaults options,
-        beforeSend: _.bind(methods.beforeSend, entity)
-        complete:   _.bind(methods.complete,   entity)
-        url:        _.bind(methods.buildURL,   entity)()
-
+  class Entities.Collection extends Backbone.Collection
+    sync: (method, entity, options = {}) ->
+      default_sync_options options, entity
       sync = super(method, entity, options)
       if !entity._fetch and method is 'read'
         entity._fetch = sync
