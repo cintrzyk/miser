@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # API
   resources :users, only: [:index, :show]
+  resources :surveys, only: [:create, :index]
 
   get  'users/confirmation', as: :api_confirmation
   post 'auth/signup', as: :api_signup
