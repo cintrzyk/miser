@@ -1,0 +1,8 @@
+.box-content
+  %form.form-horizontal.bootstrap-validator-form
+    %fieldset
+      %legend New survey
+      .form-group
+        %label.col-sm-3.control-label Name
+        .col-sm-5
+          %input.form-control{ type: 'text', name: 'name', 'data-original-title': '', title: '' }
