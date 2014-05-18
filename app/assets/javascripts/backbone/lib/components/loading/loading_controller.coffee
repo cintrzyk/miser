@@ -8,11 +8,12 @@
       _.defaults config,
         entities: @getEntities view
         debug: false
+        loading: false
 
-      loadingView = @getLoadingView()
-      @show loadingView
-
-      @showRealView view, loadingView, config
+      if config.loading
+        loadingView = @getLoadingView()
+        @show loadingView
+        @showRealView view, loadingView, config
 
     showRealView: (realView, loadingView, config) ->
       App.execute 'when:fetched', config.entities, =>
@@ -31,4 +32,5 @@
     new Loading.LoadingController
       view: view
       region: options.region
-      config: options.loading
+      config:
+        loading: options.loading
