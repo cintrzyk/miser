@@ -3,24 +3,30 @@
   class New.Controller extends App.Controllers.Authenticated
 
     initialize: ->
+      survey = App.request 'new:survey:entity'
+      @listenTo survey, 'created', ->
+        App.vent.trigger 'survey:created', survey
+
       @layout = @getLayoutView()
       @listenTo @layout, 'show', ->
-        @formRegion()
+        @formRegion survey
         @progressRegion()
       @show @layout
 
     getLayoutView: ->
       new New.Layout
 
-    getFormView: ->
+    getFormView: (survey) ->
       new New.Form
+        model: survey
 
     getProgressView: ->
       new New.Progress
 
-    formRegion: ->
-      view = @getFormView()
-      @show view,
+    formRegion: (survey) ->
+      view = @getFormView survey
+      form_view = App.request 'form:component', view
+      @show form_view,
         region: @layout.formRegion
 
     progressRegion: ->

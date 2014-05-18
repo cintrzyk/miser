@@ -9,7 +9,9 @@
 
   class New.Form extends App.Views.ItemView
     template: 'surveys/new/form'
-    className: 'box'
+    form:
+      className: 'form-horizontal'
+      focusFirstInput: true
 
   class New.Progress extends App.Views.ItemView
     template: 'surveys/new/progress'

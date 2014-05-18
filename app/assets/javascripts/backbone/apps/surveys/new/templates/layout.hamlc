@@ -1,2 +1,4 @@
-.col-xs-8.col-md-8.form-region
+.col-xs-8.col-md-8
+  .box
+    .box-content.form-region
 .col-xs-4.col-md-4.progress-region
