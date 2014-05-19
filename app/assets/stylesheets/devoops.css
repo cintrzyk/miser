@@ -562,7 +562,7 @@ ul.DTTT_dropdown.dropdown-menu > li:hover > a {
   background:rgba(0, 0, 0, 0.3);
   color:#f0f0f0;
 }
-.dataTables_wrapper input[type="text"] {
+.dataTables_wrapper input[type="search"] {
   display: block;
   width: 90%;
   height: 26px;
