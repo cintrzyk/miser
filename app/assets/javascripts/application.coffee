@@ -1,5 +1,7 @@
 #= require jquery
 #= require jquery_ujs
+#= require jquery.dataTables
+#= require dataTables.bootstrap
 #= require spin
 #= require jquery.spin
 #= require bootstrap

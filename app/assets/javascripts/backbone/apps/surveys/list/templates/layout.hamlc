@@ -1,2 +1,5 @@
 .box
-  .box-content.content-region
+  .box-header
+    .box-name
+      Surveys
+  .box-content.content-region.no-padding

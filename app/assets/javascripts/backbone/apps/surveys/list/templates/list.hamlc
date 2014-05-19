@@ -1,4 +1,4 @@
-%table.table
+%table.table.table-bordered.table-striped.table-hover.table-heading.table-datatable
   %thead
-    %th Surveys
+    %th Name
   %tbody
