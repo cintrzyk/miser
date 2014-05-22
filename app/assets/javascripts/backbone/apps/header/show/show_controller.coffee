@@ -1,6 +1,6 @@
 @Miser.module 'HeaderApp.Show', (Show, App, Backbone, Marionette, $, _) ->
 
-  class Show.Controller extends App.Controllers.Base
+  class Show.Controller extends App.Controllers.Application
     initialize: (options = {}) ->
       layout = @getLayoutView()
 

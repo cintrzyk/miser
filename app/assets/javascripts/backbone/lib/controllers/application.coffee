@@ -1,6 +1,6 @@
 @Miser.module 'Controllers', (Controllers, App, Backbone, Marionette, $, _) ->
 
-  class Controllers.Base extends Marionette.Controller
+  class Controllers.Application extends Marionette.Controller
 
     constructor: (options = {}) ->
       @region = options.region or App.request 'default:region'
@@ -39,11 +39,11 @@
 
 
 
-  class Controllers.NotAuthenticated extends App.Controllers.Base
+  class Controllers.NotAuthenticated extends App.Controllers.Application
     constructor: (options = {}) ->
       if App.current_user then App.execute 'user:authenticated' else super options
 
-  class Controllers.Authenticated extends App.Controllers.Base
+  class Controllers.Authenticated extends App.Controllers.Application
     constructor: (options = {}) ->
       if App.current_user then super options else App.execute 'user:notauthenticated'
 
