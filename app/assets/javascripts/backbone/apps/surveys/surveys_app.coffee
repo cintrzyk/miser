@@ -2,8 +2,9 @@
 
   class SurveysApp.Router extends Marionette.AppRouter
     appRoutes:
-      'surveys'     : 'list'
-      'surveys/new' : 'new'
+      'surveys'          : 'list'
+      'surveys/new'      : 'new'
+      'surveys/:id/edit' : 'edit'
 
   API =
     list: ->
@@ -12,11 +13,16 @@
     new: ->
       new SurveysApp.New.Controller
 
+    edit: (id, survey) ->
+      survey ||= App.request 'survey:entity', id
+      new SurveysApp.Edit.Controller
+        survey: survey
+
   App.addInitializer ->
     new SurveysApp.Router
       controller: API
 
   App.vent.on 'survey:created', (survey) ->
-    App.navigate 'surveys'
+    App.navigate "surveys/#{survey.id}/edit"
     App.execute 'reload:sidebar'
-    API.list()
+    API.edit null, survey
