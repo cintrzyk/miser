@@ -10,8 +10,14 @@
       Routes.surveys_path()
 
   API =
-    getSurvey: ->
+    getNewSurvey: ->
       new Entities.Survey
+
+    getSurvey: (id) ->
+      survey = new Entities.Survey
+        id: id
+      survey.fetch()
+      survey
 
     getSurveys: ->
       surveys = new Entities.Surveys
@@ -19,7 +25,10 @@
       surveys
 
   App.reqres.setHandler 'new:survey:entity', ->
-    API.getSurvey()
+    API.getNewSurvey()
+
+  App.reqres.setHandler 'survey:entity', (id) ->
+    API.getSurvey id
 
   App.reqres.setHandler 'surveys:entities', ->
     API.getSurveys()

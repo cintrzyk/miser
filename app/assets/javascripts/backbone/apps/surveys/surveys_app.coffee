@@ -3,14 +3,14 @@
   class SurveysApp.Router extends Marionette.AppRouter
     appRoutes:
       'surveys'          : 'list'
-      'surveys/new'      : 'new'
+      'surveys/new'      : '_new'
       'surveys/:id/edit' : 'edit'
 
   API =
     list: ->
       new SurveysApp.List.Controller
 
-    new: ->
+    _new: ->
       new SurveysApp.New.Controller
 
     edit: (id, survey) ->
