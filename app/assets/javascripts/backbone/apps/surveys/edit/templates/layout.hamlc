@@ -1,0 +1,8 @@
+.col-md-5
+  .box
+    .box-content.new-question-region
+  .box
+    .box-content.survey-region
+.col-md-7
+  .box
+    .box-content.questions-region
