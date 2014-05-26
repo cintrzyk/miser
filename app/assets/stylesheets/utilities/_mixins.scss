@@ -5,3 +5,9 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+@mixin table-sorting-icon($icon) {
+  background: image-url($icon) right center no-repeat;
+  padding-right: 16px;
+  cursor: pointer;
+}
