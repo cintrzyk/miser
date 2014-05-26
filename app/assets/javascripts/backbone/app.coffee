@@ -36,6 +36,8 @@
   App.reqres.setHandler 'get:current_user', ->
     App.current_user
 
+  App.reqres.setHandler 'concern', (concern) -> App.Concerns[concern]
+
   App.commands.setHandler 'register:instance', (instance, id) ->
     App.register instance, id if App.environment is 'development'
 
