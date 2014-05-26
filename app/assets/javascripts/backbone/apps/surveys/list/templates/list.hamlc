@@ -1,4 +1,5 @@
 %table.table.table-bordered.table-striped.table-hover.table-heading.table-datatable
   %thead
     %th Name
+    %th.actions
   %tbody

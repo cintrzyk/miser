@@ -11,7 +11,6 @@
     template: 'surveys/edit/survey'
     form:
       className: 'form-horizontal'
-      focusFirstInput: true
 
   class Edit.NewQuestion extends App.Views.ItemView
     template: 'surveys/edit/new_question'
