@@ -1,0 +1,5 @@
+%td.actions
+  %a{ href: @edit_path, data: { action: 'edit' } }
+    %span.fa-stack
+      %i.fa.fa-circle.fa-stack-2x
+      %i.fa.fa-pencil.fa-stack-1x.fa-inverse
